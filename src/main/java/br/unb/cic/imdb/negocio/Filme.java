@@ -7,26 +7,12 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "TB_Filme")
+@DiscriminatorValue("Filme")
 public class Filme extends TrabalhoArtistico{
-
-
-
-    @OneToOne
-    private TrabalhoArtistico trabalhoArtistico;
 
     @Column
     private int duracao;
 
-    
-
-    public TrabalhoArtistico getTrabalhoArtistico() {
-        return trabalhoArtistico;
-    }
-
-    public void setTrabalhoArtistico(TrabalhoArtistico trabalhoArtistico) {
-        this.trabalhoArtistico = trabalhoArtistico;
-    }
 
     public int getDuracao() {
         return duracao;
