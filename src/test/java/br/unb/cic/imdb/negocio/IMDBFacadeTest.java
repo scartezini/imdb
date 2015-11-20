@@ -1,16 +1,16 @@
 package br.unb.cic.imdb.negocio;
 
-import java.util.Date;
 import java.util.List;
 
 import br.unb.cic.imdb.util.ContextoID;
 import junit.framework.TestCase;
 
 public class IMDBFacadeTest extends TestCase {
-
+	
+	private IMDBFacade facade = ContextoID.instance().facade();
+	
 	public void testeAdicionaGenero() {
 		try {
-			IMDBFacade facade = ContextoID.instance().facade();
 		
 			Genero novoGenero = new Genero("Rock", "Ok... bem melhor!"); 
 		
@@ -18,7 +18,7 @@ public class IMDBFacadeTest extends TestCase {
 		
 			facade.adicionaGenero(novoGenero);
 		
-			Genero resultadoConsulta = facade.recuperarGeneroPorTitulo("Rock");
+                        Genero resultadoConsulta = facade.recuperarGeneroPorTitulo("Rock");
 		
 			assertEquals(quantidadeGeneros+1, facade.recuperarGeneros().size());
 			assertNotNull(resultadoConsulta);		
@@ -32,7 +32,6 @@ public class IMDBFacadeTest extends TestCase {
 	public void testeAdicionaAutor(){
 		
 		try {
-			IMDBFacade facade = ContextoID.instance().facade();
 			
 			Autor novoAutor = new Autor("Jose","muito louco");
 			
@@ -52,7 +51,7 @@ public class IMDBFacadeTest extends TestCase {
 	
 	public void testeAdicionarUsuario(){
 		try {
-			IMDBFacade facade = ContextoID.instance().facade();
+			
 			
 			Usuario usuario = new Usuario("teste", "senha", "nome", "12/10/1997");
 			facade.adicionaUsuario(usuario);
@@ -91,7 +90,7 @@ public class IMDBFacadeTest extends TestCase {
 //	}
 	
 	public void testAdicionarAvaliacao(){
-		IMDBFacade facade = ContextoID.instance().facade();
+		
 		
 		Usuario usuario = new Usuario("login", "senha", "nome", "12/10/1997");
 		TrabalhoArtistico trabalhoArtistico = new TrabalhoArtistico("titulo", 1997
@@ -111,11 +110,16 @@ public class IMDBFacadeTest extends TestCase {
 	}
 	
 	public void testeAdicionarTrabalhoArtistico(){
-		IMDBFacade facade = ContextoID.instance().facade();
-		
 		TrabalhoArtistico trabalhoArtistico = new TrabalhoArtistico("titulo", 1997
 				,new Genero("titulo", "descricao")
 				,new Autor("nome", "descricao"));
+		
+		facade.adicionarTrabalhoArtistico(trabalhoArtistico);
+		
+		List<TrabalhoArtistico> trabalhoArtisticoResposta = facade.recuperarTrabalhosArtistico();
+		
+		assertEquals(trabalhoArtistico.getTitulo(), trabalhoArtisticoResposta.get(0).getTitulo());
+		
 		
 	}
 }

@@ -8,8 +8,8 @@
 	<bean id="daoGenero" class="br.unb.cic.imdb.integracao.jpa.DAOGeneroJPA"/>
  	<bean id="daoAutor" class="br.unb.cic.imdb.integracao.jpa.DAOAutorJPA"/>
  	<bean id="daoUsuario" class="br.unb.cic.imdb.integracao.jpa.DAOUsuarioJPA"/>
+ 	<bean id="daoTrabalhoArtistico" class="br.unb.cic.imdb.integracao.jpa.DAOTrabalhoArtisticoJPA"/>
  	<bean id="daoAvaliacao" class="br.unb.cic.imdb.integracao.jpa.DAOAvaliacaoJPA"/>
- 	<bean id="daoTrabalhoArtistico" class="br.unb.cic.imdb.integracao.jpa.DAOAvaliacaoJPA"/>
  	
 	<!--  bean id="daoGenero" class="br.unb.cic.imdb.integracao.memoria.DAOGeneroMemoria"/-->
 
@@ -17,8 +17,8 @@
 		<property name="daoGenero" ref="daoGenero" />
 		<property name="daoAutor" ref="daoAutor" />
 		<property name="daoUsuario" ref="daoUsuario" />
-		<property name="daoAvaliacao" ref="daoAvaliacao" />
 		<property name="daoTrabalhoArtistico" ref="daoTrabalhoArtistico" />
+		<property name="daoAvaliacao" ref="daoAvaliacao" />	
 	</bean>
 
 </beans>

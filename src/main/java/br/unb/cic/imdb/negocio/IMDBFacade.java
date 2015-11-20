@@ -25,6 +25,7 @@ public class IMDBFacade {
 	private DAOAvaliacao daoAvaliacao;
 	private DAOTrabalhoArtistico daoTrabalhoArtistico;
 	
+	
 	public IMDBFacade() {}
 	
 	//Usando o Spring Framework, o construtor declarado 
@@ -146,6 +147,12 @@ public class IMDBFacade {
 	public TrabalhoArtistico recuperarTrabalhoArtisticoPorTitulo(String titulo){
 		return daoTrabalhoArtistico.recuperarPorTitulo(titulo);
 	}
-		
+
+
+	public void setDaoTrabalhoArtistico(DAOTrabalhoArtistico daoTrabalhoArtistico) {
+		this.daoTrabalhoArtistico = daoTrabalhoArtistico;
+	}
+	
+	
 	
 }

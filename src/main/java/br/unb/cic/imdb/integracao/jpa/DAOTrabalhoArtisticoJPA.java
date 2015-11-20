@@ -29,9 +29,9 @@ public class DAOTrabalhoArtisticoJPA implements DAOTrabalhoArtistico{
 	@Override
 	public TrabalhoArtistico recuperarPorTitulo(String titulo) {
 		em = EMFactoryHelper.instance().getFactory().createEntityManager();
-		List<TrabalhoArtistico> trabalhoArtisticos = em.createQuery("FROM TrabalhoArtistico WHERE titulo = :tituloParam")
-					.setParameter("tituloParam", titulo)
-					.getResultList();
+		List<TrabalhoArtistico> trabalhoArtisticos = em
+				.createQuery("FROM TrabalhoArtistico WHERE titulo = :tituloParam")
+				.setParameter("tituloParam", titulo).getResultList();
 		
 		return trabalhoArtisticos.size() == 1? trabalhoArtisticos.get(0) : null;
 	}
