@@ -1,5 +1,6 @@
 package br.unb.cic.imdb.integracao.jpa;
 
+import br.unb.cic.imdb.integracao.DAOAutor;
 import br.unb.cic.imdb.integracao.DAOFactory;
 import br.unb.cic.imdb.integracao.DAOGenero;
 
@@ -13,5 +14,10 @@ public class DAOFactoryImpl extends DAOFactory {
 	@Override
 	public DAOGenero createDAOGenero() {
 		return new DAOGeneroJPA();
+	}
+
+	@Override
+	public DAOAutor createDAOAutor() {
+		return new DAOAutorJPA();
 	}
 }

@@ -5,12 +5,20 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <bean id="daoGenero" class="br.unb.cic.imdb.integracao.jpa.DAOGeneroJPA"/>
- 
-   <!--  bean id="daoGenero" class="br.unb.cic.imdb.integracao.memoria.DAOGeneroMemoria"/-->
+	<bean id="daoGenero" class="br.unb.cic.imdb.integracao.jpa.DAOGeneroJPA"/>
+ 	<bean id="daoAutor" class="br.unb.cic.imdb.integracao.jpa.DAOAutorJPA"/>
+ 	<bean id="daoUsuario" class="br.unb.cic.imdb.integracao.jpa.DAOUsuarioJPA"/>
+ 	<bean id="daoAvaliacao" class="br.unb.cic.imdb.integracao.jpa.DAOAvaliacaoJPA"/>
+ 	<bean id="daoTrabalhoArtistico" class="br.unb.cic.imdb.integracao.jpa.DAOAvaliacaoJPA"/>
+ 	
+	<!--  bean id="daoGenero" class="br.unb.cic.imdb.integracao.memoria.DAOGeneroMemoria"/-->
 
-   <bean id="facade" class="br.unb.cic.imdb.negocio.IMDBFacade" scope="singleton">
-      <property name="daoGenero" ref="daoGenero" />
-   </bean>
+	<bean id="facade" class="br.unb.cic.imdb.negocio.IMDBFacade">
+		<property name="daoGenero" ref="daoGenero" />
+		<property name="daoAutor" ref="daoAutor" />
+		<property name="daoUsuario" ref="daoUsuario" />
+		<property name="daoAvaliacao" ref="daoAvaliacao" />
+		<property name="daoTrabalhoArtistico" ref="daoTrabalhoArtistico" />
+	</bean>
 
 </beans>

@@ -27,11 +27,25 @@ public class TrabalhoArtistico {
 	@Column
 	private int ano;
 	
+	
 	@ManyToOne
 	private Genero genero;
 	
+	
 	@ManyToOne
 	private Autor autor;
+	
+	
+	
+	public TrabalhoArtistico() {
+	}
+
+	public TrabalhoArtistico(String titulo, int ano, Genero genero, Autor autor) {
+		this.titulo = titulo;
+		this.ano = ano;
+		this.genero = genero;
+		this.autor = autor;
+	}
 
 	public String getTitulo() {
 		return titulo;

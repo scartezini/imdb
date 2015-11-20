@@ -1,5 +1,6 @@
 package br.unb.cic.imdb.integracao.memoria;
 
+import br.unb.cic.imdb.integracao.DAOAutor;
 import br.unb.cic.imdb.integracao.DAOFactory;
 import br.unb.cic.imdb.integracao.DAOGenero;
 
@@ -17,6 +18,12 @@ public class DAOFactoryImpl extends DAOFactory {
 	
 	public DAOGenero createDAOGenero() {
 		return new DAOGeneroMemoria();
+	}
+
+	@Override
+	public DAOAutor createDAOAutor() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

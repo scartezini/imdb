@@ -38,4 +38,6 @@ public abstract class DAOFactory {
 	}
 	
 	public abstract DAOGenero createDAOGenero();
+	
+	public abstract DAOAutor createDAOAutor();
 }

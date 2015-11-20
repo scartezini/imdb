@@ -19,15 +19,24 @@ public class Avaliacao {
 
     @Column
     private String comentario;
-
+    
+ 
     @ManyToOne
     private TrabalhoArtistico trabalhoArtistico;
-
+    
+   
     @ManyToOne
     private Usuario usuario;
 
+    public Avaliacao(){}
+    public Avaliacao(int avaliacao, String comentario, TrabalhoArtistico trabalhoArtistico, Usuario usuario) {
+		this.avaliacao = avaliacao;
+		this.comentario = comentario;
+		this.trabalhoArtistico = trabalhoArtistico;
+		this.usuario = usuario;
+	}
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 

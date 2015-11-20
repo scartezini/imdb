@@ -25,13 +25,22 @@ public class Usuario {
     private String nome;
 
     @Column
-    private Date nascimento;
+    private String nascimento;
 
-
+    
     @OneToMany(mappedBy = "usuario")
     private List<Avaliacao> avaliacao;
+    
+    public Usuario(){}
+    
+    public Usuario( String login, String senha, String nome, String nascimento) {
+		this.login = login;
+		this.senha = senha;
+		this.nome = nome;
+		this.nascimento = nascimento;
+	}
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 
@@ -59,11 +68,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public Date getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
